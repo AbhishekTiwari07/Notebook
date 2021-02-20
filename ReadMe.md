@@ -108,7 +108,7 @@ and visit http://localhost:3000/login
 
 - [ 👨🏻‍💻 Abhishek Tiwari](https://github.com/AbhishekTiwari07)
 - [ 💻 Yogi Valecha](https://github.com/yogivalecha9898)
-- [👨 Vinay Wankhede](#)
+- [👨 Vinay Wankhede](https://github.com/VinayWankhede11)
 
 
 <p align="center"> Hoping to make a better world with 💻programming </p>
