@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport');
 
 const User = require('../models/User')
+const Concept = require('../models/Concept')
 
 router.get('/login',(req,res)=>{
     res.render("login")
@@ -11,6 +12,38 @@ router.get('/login',(req,res)=>{
 
 router.get('/register',(req,res)=>{
     res.render("register")
+})
+
+router.get('/viewnotebook',(req,res)=>{
+    res.render("register")
+})
+
+router.get('/search',(req,res)=>{
+    Concept.find({ InstituteName: req.query.InstituteName, CourseName: req.query.CourseName }, function (err, docs) { 
+        if (err){ 
+            console.log(err); 
+        } 
+        else{ 
+            console.log(JSON.stringify(docs[0])); 
+        } 
+        res.send(JSON.stringify(docs[0]))
+    })
+})
+
+router.post('/concept',(req,res)=>{
+    const {InstituteName, CourseName, content, examples} = req.query
+    console.log(InstituteName)
+    const newConcept = new Concept({
+        InstituteName, 
+        CourseName, 
+        content, 
+        examples})
+    newConcept.save()
+        .then( Concept =>{
+            console.log("Created")
+            res.redirect('/dashboard')
+        })
+        .catch(err=>console.log(err))
 })
 
 router.post('/register',(req,res)=>{
