@@ -1,12 +1,17 @@
-const login = document.getElementById('signin')
-const reg = document.getElementById('signup')
 const main = document.getElementById('main')
 const toggle = document.querySelector('.toggle')
 const tatti = document.querySelector('.tatti')
 const time = document.querySelector('.time')
+const sub = document.querySelector('.sub')
+const res = document.querySelector('.res')
 
 const tl = new TimelineMax()
 let flag = 1;
+
+sub.addEventListener("click",(e)=>{
+    e.preventDefault()
+    window.location.href = "http://localhost:3000/dashboard";
+})
 
 toggle.addEventListener('click', ()=> {
     if(flag === 1) {
@@ -54,7 +59,7 @@ toggle.addEventListener('click', ()=> {
             let str = ""
             str += `
             <div class="in">
-                <form >
+                <form>
                     <div class="name">
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <input type="text" id="name" placeholder="Username">
@@ -153,9 +158,7 @@ toggle.addEventListener('click', ()=> {
     }  
 })
 
-login.addEventListener('click', (e)=> {
-    e.preventDefault()
-})
+
 // login.addEventListener('click', ()=> {
 //     let str = ""
 //     str += `

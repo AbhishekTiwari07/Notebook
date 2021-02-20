@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const ConceptSchema = new mongoose.Schema({
+  Title: {
+    type: String,
+    required:true
+  },
   InstituteName: {
     type: String,
     required: true
